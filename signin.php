@@ -18,7 +18,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="wrap">
-						<div class="img" style="background-image: url(../image/12.jpg);"></div>
+						<div class="img" style="background-image: url(image/12.jpg);"></div>
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
@@ -39,7 +39,7 @@
 		            	<button type="submit" name="login" class="form-control btn bg-primary rounded submit px-3">Sign In</button>
 		            </div>
 		          </form>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+		          <p class="text-center">Not a member? <a data-toggle="tab" href="signup.php">Sign Up</a></p>
 		        </div>
 		      </div>
 				</div>
@@ -74,7 +74,10 @@ if (isset($_POST['login'])) {
 	// cek apakah username dan password di temukan pada database
 	if($cek > 0){
 		$data = mysqli_fetch_assoc($login);
-        if ( isset($_GET["checkin"]) && isset($_GET["checkout"])){
+        if ( isset($_GET["checkin"]) && isset($_GET["checkout"]) && $_GET["jumlah"]){
+			$checkin = $_GET["checkin"];
+			$checkout = $_GET["checkout"];
+			$jumlah = $_GET["jumlah"];
             $_SESSION['guest'] = [
                 "id" => $data["id"],
                 "name" => $data["name"],
@@ -82,7 +85,7 @@ if (isset($_POST['login'])) {
             ];
             // alihkan ke halaman dashboard admin
             print_r($_SESSION["guest"]);
-            header("location:index.php?page=daftar-kamar-pesan&checkin=$checkin&checkout=$checkout");
+            header("location:index.php?page=daftar-kamar-pesan&checkin=$checkin&checkout=$checkout&jumlah=$jumlah");
         } else {
             $_SESSION['guest'] = [
                 "id" => $data["id"],

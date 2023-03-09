@@ -3,10 +3,11 @@
  	include "koneksi.php";
 	$checkin = $_GET["checkin"];
     $checkout = $_GET["checkout"];
+	$jumlah = $_GET["jumlah"];
 	if(empty($_SESSION['guest'])){
 		echo ("<script LANGUAGE='JavaScript'>
             window.alert('ANDA BELUM LOGIN, HARAF LOGIN TERLEBIHDAHULU');
-            window.location.href='signin.php?checkin=$checkin&checkout=$checkout';
+            window.location.href='signin.php?checkin=$checkin&checkout=$checkout&jumlah=$jumlah';
             </script>");
 	}
   ?>
@@ -32,8 +33,8 @@
 		    <input type="date" class="form-control" id="checkout" name="checkout" value="<?php echo $_GET['checkout']; ?>">
 		  </div>
 		  <div class="col-12">
-		    <label for="nama" class="form-label">Nama Pemesan</label>
-		    <input type="text" class="form-control" id="nama" name="namapemesan">
+		    <label for="nama" class="form-label">User Id</label>
+		    <input type="text" class="form-control" id="nama" name="user_id" value="<?php echo $_SESSION["guest"]["id"] ?>">
 		  </div>
 		  <div class="col-12">
 		    <label for="Email" class="form-label">Email</label>

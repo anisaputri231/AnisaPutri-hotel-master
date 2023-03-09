@@ -4,13 +4,13 @@
   $checkout 	 = $_POST['checkout'];
   
   include "koneksi.php";
-  $selisih		= (strtotime($checkout) - strtotime($checkin))/60/60/24;
-  $namapemesan	= $_POST['namapemesan'];   
-  $namatamu    	= $_POST['namatamu'];
-  $email	   	= $_POST['email'];
-  $nohp        	= $_POST['nohp'];
-  $jumlahkamar 	= $_POST['jumlahkamar'];
-  $idtipekamar 	= $_POST['tipekamar'];
+  $selisih		 = (strtotime($checkout) - strtotime($checkin))/60/60/24;
+  $namapemesan = $_POST['namapemesan'];   
+  $namatamu    = $_POST['namatamu'];
+  $email			 = $_POST['email'];
+  $nohp        = $_POST['no'];
+  $jumlahkamar = $_POST['jumlahkamar'];
+  $idtipekamar = $_POST['tipekamar'];
 
 if ($checkout > $checkin) {
   	$selectharga = $conn->query("select harga from kamar where id='$idtipekamar'");

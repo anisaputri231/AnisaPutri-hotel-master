@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Masuk</h3>
+			      			<h3 class="mb-4">Daftar</h3>
 			      		</div>
 			      	</div>
 						<form action="" class="signin-form" method="post">
@@ -44,7 +45,7 @@
 			      			<label class="form-control-placeholder" for="no_telp">No_telp</label>
 			      		</div>
 		            <div class="form-group">
-		            	<button type="submit" name="login" class="form-control btn bg-primary rounded submit px-3">Sign In</button>
+		            	<button type="submit" name="daftar" class="form-control btn bg-primary rounded submit px-3" href="signin.php">Sign In</button>
 		            </div>
 		          </form>
 		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
@@ -54,16 +55,34 @@
 			</div>
 		</div>
 	</section>
-    <?php
-        $name = $_POST["name"];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $no_telp = $_POST['no_telp'];
+  
+	<?php
+	session_start();
+ 
+	if (isset($_SESSION['login'])) {
+	    header("Location: index.php");
+	}
+  include "koneksi.php";
+  if (isset($_POST["daftar"])) {
+	$name = $_POST['name'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+	$no_telp = $_POST['no_telp'];
 
-        
-    ?>
+    $daftar   = $conn->query("INSERT INTO guest (name, username, password, no_telp) VALUES ('$name', '$username', md5('$password'), '$no_telp')");
+    if ($daftar) {
+      echo ("<SCRIPT LANGUAGE='JavaScript'>
+          window.alert('Pendaftaran Berhasil, Klik OK untuk Login')
+      window.location.href='signin.php';
+    </SCRIPT>");
+    }else{
+      echo "gagal";
+    }
+  }
 
-	<script src=js/jquery.min.js"></script>
+?>
+
+	<script src=js/jquery.min.js></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>

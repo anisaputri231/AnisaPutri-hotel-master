@@ -59,7 +59,7 @@ include"koneksi.php";
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
-                <small class="text-muted">Rp. <?php echo $data['harga']; ?> / Malam</small>
+                <small class="text-muted">Rp. <?php echo number_format("$data[harga]",2,",","."); ?> / Malam</small>
               </div>
             </div>
           </div>

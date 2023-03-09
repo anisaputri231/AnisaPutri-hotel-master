@@ -34,7 +34,7 @@
 		  </div>
 		  <div class="col-12">
 		    <label for="nama" class="form-label">User Id</label>
-		    <input type="text" class="form-control" id="nama" name="user_id" value="<?php echo $_SESSION["guest"]["id"] ?>">
+		    <input type="text" class="form-control" name="namapemesan" value="<?php echo $_SESSION['guest']['id'] ?>">
 		  </div>
 		  <div class="col-12">
 		    <label for="Email" class="form-label">Email</label>

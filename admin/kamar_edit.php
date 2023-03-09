@@ -34,7 +34,7 @@
       <label for="exampleInputPassword1" class="form-label">Status</label>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="status" >
   <?php echo $data['status']; ?>
-  <option value="ceheckin">Checkin</option>
+  <option value="checkin">Checkin</option>
   <option value="checkout">Checkout</option>
 </select>
     </div>

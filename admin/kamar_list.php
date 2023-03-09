@@ -44,4 +44,9 @@
     <?php } ?>
     </tbody>
   </table>
+  <?php
+  echo "<pre>";
+  echo $_SESSION['level'];
+  echo "</pre>";
+  ?>
 </div>

@@ -3,18 +3,18 @@ include "../header.php";
 
 session_start();
 
-if ($_SESSION ['level'] ="") {
-  header("location: . ./index.php");
+if ($_SESSION['role'] == "") {
+  header("location:login.php");
   # code...
 }
 
-if ($_SESSION ['level'] =="admin") {
-  header("location: ../admin/index.php");
+if ($_SESSION['role'] == "admin") {
+  header("location:admin/index.php");
   # code...
 }
-
-echo $_SESSION['level'];
-
+echo "<pre>";
+echo $_SESSION['role'];
+echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">

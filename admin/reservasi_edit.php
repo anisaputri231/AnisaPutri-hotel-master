@@ -21,7 +21,9 @@
 		  </div>
 		  <div class="col-12">
 		    <label for="nama" class="form-label">Nama Pemesan</label>
-		    <input type="text" class="form-control" id="nama" name="namapemesan" readonly value="<?php echo $data['nama']; ?>">
+			<?php $guest_name = $conn->query("SELECT * FROM guest WHERE id='$data[user_id]'"); ?>
+			<?php $dataguest = $guest_name->fetch_assoc() ?>
+		    <input type="text" class="form-control" id="nama" name="namapemesan" readonly value="<?php echo $dataguest['name']; ?>">
 		  </div>
 		  <div class="col-md-6">
 		    <label for="tipekamar" class="form-label">Tipe Kamar</label>

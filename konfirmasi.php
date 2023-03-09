@@ -7,7 +7,7 @@
   $selisih		 = (strtotime($checkout) - strtotime($checkin))/60/60/24;
   $namapemesan = $_POST['namapemesan'];   
   $namatamu    = $_POST['namatamu'];
-  $email			 = $_POST['email'];
+  $email	   = $_POST['email'];
   $nohp        = $_POST['no'];
   $jumlahkamar = $_POST['jumlahkamar'];
   $idtipekamar = $_POST['tipekamar'];

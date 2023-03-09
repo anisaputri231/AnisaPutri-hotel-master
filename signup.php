@@ -69,7 +69,7 @@
     $password = $_POST['password'];
 	$no_telp = $_POST['no_telp'];
 
-    $daftar   = $conn->query("INSERT INTO guest (name, username, password, no_telp) VALUES ('$name', '$username', md5('$password'), '$no_telp')");
+    $daftar   = $conn->query("INSERT INTO guest (name, username, password, tlp) VALUES ('$name', '$username', md5('$password'), '$no_telp')");
     if ($daftar) {
       echo ("<SCRIPT LANGUAGE='JavaScript'>
           window.alert('Pendaftaran Berhasil, Klik OK untuk Login')

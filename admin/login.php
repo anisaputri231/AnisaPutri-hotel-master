@@ -85,11 +85,11 @@ if (isset($_POST['login'])) {
 		$data = mysqli_fetch_assoc($login);
 	 
 		// cek jika user login sebagai admin
-		if($data['role']=="admin"){
+		if($data['role']== "admin" ){
 	 
 			// buat session login dan username
 			$_SESSION['username'] = $username;
-			$_SESSION['role'] = "admin";
+			$_SESSION["role"] = "admin";
 			// alihkan ke halaman dashboard admin
 			header("location:index.php");
 	 
@@ -99,7 +99,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['username'] = $username;
 			$_SESSION['role'] = "resevsionis";
 			// alihkan ke halaman dashboard admin
-			header("location:index.php");
+			header("location:../resevsionis/index.php");
 	 
 		}
 		else{

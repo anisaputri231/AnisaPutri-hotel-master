@@ -40,13 +40,13 @@
     </thead>
     <tbody>
     <?php 
-     $query = $conn->query('SELECT * FROM kamar INNER JOIN reservasi ON kamar.id = reservasi.kamar_id');
+     $query = $conn->query('SELECT reservasi.id, reservasi.checkin, reservasi.jumlah, reservasi.status, reservasi.checkout, kamar.tipe_kamar, guest.name, reservasi.kamar_id FROM reservasi INNER JOIN kamar ON reservasi.kamar_id=kamar.id INNER JOIN guest ON reservasi.user_id=guest.id');
      $no=1; 
      while ($data = mysqli_fetch_array($query)) {
     ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $data['nama'] ?></td>
+        <td><?php echo $data['name'] ?></td>
         <td><?php echo $data['tipe_kamar'] ?></td>
         <td><?php echo $data['checkin'] ?></td>
         <td><?php echo $data['checkout'] ?></td>
@@ -61,5 +61,14 @@
       </tr>
     <?php } ?>
     </tbody>
+   
   </table>
+<br>
+<br>
+<br>
+  <?php
+  echo "<pre>";
+  echo $_SESSION["level"];
+  echo "</pre>";
+  ?>
 </div>

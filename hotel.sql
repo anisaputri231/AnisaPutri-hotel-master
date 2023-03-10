@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Mar 2023 pada 08.19
+-- Waktu pembuatan: 10 Mar 2023 pada 10.53
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 7.4.30
 
@@ -65,10 +65,10 @@ CREATE TABLE `fasilitas_kamar` (
 INSERT INTO `fasilitas_kamar` (`fasilitaskamar_id`, `kamar_id`, `fasilitas`) VALUES
 (1, 1, 'tempat tidur, AC, TV, perlengkapan mandi, dan air minum.'),
 (4, 3, 'Pengering rambut,AC,TV,Kulkas,Fasilitas pembuatan teh dan kopi.'),
-(6, 5, 'Ranjang standar,meja rias kecil,kamar mandi.'),
+(6, 5, 'Ranjang standar,meja rias kecil,kamar mandi,dan AC.'),
 (7, 7, 'Tempat bak mandi,AC,Tempat Tidur Double,Televisi,Wireless Internet.'),
-(8, 11, 'Pintu penghubung,kamar mandi,AC,Televisi.'),
-(9, 9, 'AC,,TV,Tempat makan,Setrika,Tempat Tidur King.');
+(8, 11, 'Pintu penghubung,kamar mandi,AC,Televisi,2 tempat tidur.'),
+(9, 9, 'AC,TV,Tempat makan,Meja Setrika,Tempat Tidur King.');
 
 -- --------------------------------------------------------
 
@@ -112,9 +112,9 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`id`, `tipe_kamar`, `harga`, `gambar`, `status`) VALUES
-(1, 'Standard room', 250, '', 'checkout'),
+(1, 'Standard room', 250, 'Alt-Text-1.jpg', 'checkout'),
 (2, 'Superior room', 300, 'Alt-Text-2.jpg', 'checkin'),
-(3, 'Deluxe room', 300, '', 'checkin'),
+(3, 'Deluxe room', 300, 'Alt-Text-3.jpg\r\n', 'checkout'),
 (4, 'Twin room', 150, 'Alt-Text-4.jpg', 'checkin'),
 (5, 'Single room', 750, 'Alt-Text-5.jpg', 'checkout'),
 (6, 'Double room', 500, 'Alt-Text-6.jpg', 'checkin'),
@@ -151,7 +151,9 @@ INSERT INTO `reservasi` (`id`, `user_id`, `email`, `no_hp`, `kamar_id`, `checkin
 (36, 2, 'ujang@gmail.com', 111, 1, '2023-03-11', '2023-03-25', 3500, 'checkin'),
 (37, 2, 'ujang@gmail.com', 111, 1, '2023-03-11', '2023-03-25', 3500, 'proses'),
 (38, 3, 'siti@gmail.com', 2222, 1, '2023-03-10', '2023-03-11', 750, 'proses'),
-(39, 3, 'siti@gmail.com', 2222, 3, '2023-03-12', '2023-03-13', 900, 'proses');
+(39, 3, 'siti@gmail.com', 2222, 3, '2023-03-12', '2023-03-13', 900, 'proses'),
+(40, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'checkin'),
+(41, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'proses');
 
 -- --------------------------------------------------------
 
@@ -242,13 +244,13 @@ ALTER TABLE `guest`
 -- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

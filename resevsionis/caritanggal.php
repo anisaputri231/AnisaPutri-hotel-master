@@ -28,7 +28,7 @@
     ?>
       <tr>
         <td><?php echo $data['id'] ?></td>
-        <td><?php echo $data['nama'] ?></td>
+        <td><?php echo $data['user_id'] ?></td>
         <td><?php echo $data['tipe_kamar'] ?></td>
         <td><?php echo $data['checkin'] ?></td>
         <td><?php echo $data['checkout'] ?></td>

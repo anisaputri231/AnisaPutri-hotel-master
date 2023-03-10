@@ -11,7 +11,7 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nama Pemesan</th>
+        <th scope="col">User Id</th>
         <th scope="col">Tipe Kamar</th>
         <th scope="col">Check IN</th>
         <th scope="col">Check Out</th>
@@ -22,13 +22,13 @@
     </thead>
     <tbody>
     <?php 
-    $nama = $_POST['nama'];
-    $query = $conn->query("SELECT * FROM  reservasi JOIN kamar ON kamar.id = reservasi.kamar_id WHERE nama like '%$nama%'");
+    $user_id = $_POST['user_id'];
+    $query = $conn->query("SELECT * FROM  reservasi JOIN kamar ON kamar.id = reservasi.kamar_id WHERE user_id like '%$user_id%'");
       while ($data = mysqli_fetch_array($query)) {
     ?>
       <tr>
         <td><?php echo $data['id'] ?></td>
-        <td><?php echo $data['nama'] ?></td>
+        <td><?php echo $data['user_id'] ?></td>
         <td><?php echo $data['tipe_kamar'] ?></td>
         <td><?php echo $data['checkin'] ?></td>
         <td><?php echo $data['checkout'] ?></td>

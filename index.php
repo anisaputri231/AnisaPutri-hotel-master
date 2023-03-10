@@ -100,6 +100,9 @@
                 case 'profil':
                     include "profil.php";
                     break; 
+                case 'profil':
+                    include "profil.php";
+                    break; 
                 default:
                     echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
                 break;

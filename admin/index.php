@@ -8,13 +8,11 @@ if ($_SESSION['role'] == "") {
   # code...
 }
 
-if ($_SESSION['role'] == "admin") {
-  header("location:index.php");
+if ($_SESSION['role'] == "resevsionis") {
+  header("location:resevsionis/index.php");
   # code...
 }
-echo "<pre>";
-echo $_SESSION['role'];
-echo "</pre>";
+
 ?>
 <!doctype html>
 <html lang="en">

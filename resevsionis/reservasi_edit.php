@@ -21,7 +21,7 @@
 		  </div>
 		  <div class="col-12">
 		    <label for="nama" class="form-label">Nama Pemesan</label>
-		    <input type="text" class="form-control" id="nama" name="namapemesan" readonly value="<?php echo $data['nama']; ?>">
+		    <input type="text" class="form-control" id="nama" name="user_id" readonly value="<?php echo $data['nama']; ?>">
 		  </div>
 		  <div class="col-md-6">
 		    <label for="tipekamar" class="form-label">Tipe Kamar</label>

@@ -17,7 +17,7 @@
   </form>
   <form class="row g-3" method="post" action="index.php?page=cari-nama">
     <div class="col">
-      <input type="text" class="form-control" name="nama">
+      <input type="text" class="form-control" name="user_id">
     </div>
     <div class="col">
       <input type="submit" name="" value="cari" class="btn btn-primary">
@@ -29,7 +29,7 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nama Pemesan</th>
+        <th scope="col">User Id</th>
         <th scope="col">Tipe Kamar</th>
         <th scope="col">Check IN</th>
         <th scope="col">Check Out</th>
@@ -46,7 +46,7 @@
     ?>
       <tr>
         <td><?php echo $no++ ?></td>
-        <td><?php echo $data['nama'] ?></td>
+        <td><?php echo $data['user_id'] ?></td>
         <td><?php echo $data['tipe_kamar'] ?></td>
         <td><?php echo $data['checkin'] ?></td>
         <td><?php echo $data['checkout'] ?></td>

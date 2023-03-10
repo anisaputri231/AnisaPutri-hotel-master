@@ -20,7 +20,7 @@
 		    <input type="date" class="form-control" id="checkout" name="checkout" readonly value="<?php echo $data['checkout']; ?>">
 		  </div>
 		  <div class="col-12">
-		    <label for="nama" class="form-label">Nama Pemesan</label>
+		    <label for="nama" class="form-label">User Id</label>
 			<?php $guest_name = $conn->query("SELECT * FROM guest WHERE id='$data[user_id]'"); ?>
 			<?php $dataguest = $guest_name->fetch_assoc() ?>
 		    <input type="text" class="form-control" id="nama" name="namapemesan" readonly value="<?php echo $dataguest['name']; ?>">

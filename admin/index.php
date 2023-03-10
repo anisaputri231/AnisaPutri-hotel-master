@@ -9,7 +9,7 @@ if ($_SESSION['role'] == "") {
 }
 
 if ($_SESSION['role'] == "admin") {
-  header("location:admin/index.php");
+  header("location:index.php");
   # code...
 }
 echo "<pre>";

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Mar 2023 pada 10.53
--- Versi server: 10.4.25-MariaDB
--- Versi PHP: 7.4.30
+-- Waktu pembuatan: 11 Mar 2023 pada 09.41
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `fasilitas_hotel` (
   `nama_fasilitashotel` varchar(255) NOT NULL,
   `keterangan` text NOT NULL,
   `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `fasilitas_hotel`
@@ -56,7 +56,7 @@ CREATE TABLE `fasilitas_kamar` (
   `fasilitaskamar_id` int(11) NOT NULL,
   `kamar_id` int(11) NOT NULL,
   `fasilitas` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `fasilitas_kamar`
@@ -82,14 +82,14 @@ CREATE TABLE `guest` (
   `username` varchar(100) NOT NULL,
   `password` text NOT NULL,
   `tlp` varchar(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `guest`
 --
 
 INSERT INTO `guest` (`id`, `name`, `username`, `password`, `tlp`) VALUES
-(1, 'a', 'a', '0cc175b9c0f1b6a831c399e269772661', '4'),
+(1, 'a', 'c', 'd41d8cd98f00b204e9800998ecf8427e', '4'),
 (2, 'b', 'b', '92eb5ffee6ae2fec3ad71c777531578f', '6'),
 (3, 'sitiaeni', 'aeni', '5080746dea800ccb3ac99e1bf4731183', '222');
 
@@ -105,7 +105,7 @@ CREATE TABLE `kamar` (
   `harga` int(100) NOT NULL,
   `gambar` text NOT NULL,
   `status` enum('checkin','checkout') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `kamar`
@@ -141,7 +141,7 @@ CREATE TABLE `reservasi` (
   `checkout` date NOT NULL,
   `jumlah` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `reservasi`
@@ -152,8 +152,16 @@ INSERT INTO `reservasi` (`id`, `user_id`, `email`, `no_hp`, `kamar_id`, `checkin
 (37, 2, 'ujang@gmail.com', 111, 1, '2023-03-11', '2023-03-25', 3500, 'proses'),
 (38, 3, 'siti@gmail.com', 2222, 1, '2023-03-10', '2023-03-11', 750, 'proses'),
 (39, 3, 'siti@gmail.com', 2222, 3, '2023-03-12', '2023-03-13', 900, 'proses'),
-(40, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'checkin'),
-(41, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'proses');
+(40, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'proses'),
+(41, 1, 'anisaputri23141@gmail.com', 2222, 2, '2023-03-10', '2023-03-15', 1500, 'proses'),
+(42, 3, 'aeni@gmail.com', 222, 5, '2023-03-11', '2023-03-12', 750, 'proses'),
+(43, 3, '', 0, 1, '2023-03-11', '2023-03-12', 500, 'proses'),
+(44, 3, '', 0, 1, '2023-03-11', '2023-03-12', 500, 'proses'),
+(55, 4, 'f@gmail.com', 22, 3, '2023-03-11', '2023-03-12', 300, 'proses'),
+(56, 4, '', 0, 1, '2023-03-11', '2023-03-12', 250, 'proses'),
+(57, 4, '', 0, 1, '2023-03-11', '2023-03-12', 250, 'proses'),
+(58, 4, 'dini@gmail.com', 444, 10, '2023-03-13', '2023-03-19', 17100, 'proses'),
+(59, 2, '', 0, 1, '2023-03-12', '2023-03-19', 1750, 'proses');
 
 -- --------------------------------------------------------
 
@@ -168,7 +176,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `no_telp` int(11) NOT NULL,
   `role` enum('admin','resevsionis') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
@@ -238,7 +246,7 @@ ALTER TABLE `fasilitas_kamar`
 -- AUTO_INCREMENT untuk tabel `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kamar`
@@ -250,7 +258,7 @@ ALTER TABLE `kamar`
 -- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

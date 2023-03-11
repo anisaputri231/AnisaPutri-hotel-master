@@ -6,7 +6,7 @@
   <h1 class="h2">Daftar Reservasi Hotel</h1>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="print">
   <form class="row g-3" method="post" action="index.php?page=cari-tanggal">
     <div class="col">
       <input type="date" class="form-control" id="checkin" name="checkin">
@@ -24,7 +24,7 @@
     </div>
   </form>
 </div>
-<div class="table-responsive">
+<div class="table-responsive" id="printableArea">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
@@ -67,3 +67,20 @@
 <br>
 <br>
 </div>
+<div class="row text-center">
+		<div class="col-md-12">
+			<input type="button" onclick="printDiv('printableArea')" value="print a div!" class="m-3" />
+		</div>
+	</div>
+	<script type="text/javascript">
+		function printDiv(printableArea) {
+     var printContents = document.getElementById(printableArea).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+	</script>

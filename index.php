@@ -56,7 +56,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=daftar-fasilitas">Fasilitas</a>
-        <li>                                                                                                                    <?php if ( !empty( $_SESSION["guest"])) : ?>                                       
+        <li>                      <?php if ( !empty( $_SESSION["guest"])) : ?>                                       
         <ul class="navbar-nav ms-auto">
             
             <li class="nav-item dropdown">
@@ -102,6 +102,12 @@
                     break; 
                 case 'profil':
                     include "profil.php";
+                    break; 
+                case 'profil-edit':
+                    include "profil_edit.php";
+                    break; 
+                case 'profil-delete':
+                    include "profil_delete.php";
                     break; 
                 default:
                     echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";

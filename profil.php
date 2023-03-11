@@ -78,8 +78,8 @@
                                         <th scope="col">ID</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Username</th>
-                                        <th scope="col">Password</th>
                                         <th scope="col">No Telepon</th>
+                                        <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,9 +94,12 @@
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $data['name'] ?></td>
                                     <td><?php echo $data['username'] ?></td>
-                                    <td><?php echo $data['password'] ?></td>
                                     <td><?php echo $data['tlp'] ?></td>
+                                    <td>
+                                    <a href="index.php?page=profil-edit&id=<?php echo $data['id']; ?>">edit</a> | 
+                                    <a href="index.php?page=profil-delete&id=<?php echo $data['id']; ?>" onclick="return confirm('Anda yakin mau menghapus User ini ?')">Hapus</a>
                                     </td>
+                                    
                                 
                                     
                                 </tr>

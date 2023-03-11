@@ -65,6 +65,7 @@ if ($_SESSION['role'] == "resevsionis") {
   </div>
 </header>
 
+
 <div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -178,6 +179,7 @@ if ($_SESSION['role'] == "resevsionis") {
     </main>
   </div>
 </div>
+ 
 
 
     <script src="../js/bootstrap.bundle.min.js"></script>

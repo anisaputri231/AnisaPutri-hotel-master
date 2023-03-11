@@ -73,7 +73,7 @@ if ($checkout > $checkin) {
 	    <tr>
 	    	<td>TOTAL BAYAR</td>
 	    	<td>:</td>
-	    	<td><?php echo $totalbayar; ?></td>
+	    	<td>Rp.<?php echo number_format($totalbayar,2,",",".");?></td>
 	    </tr>
     </table>
     </div>

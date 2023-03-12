@@ -50,7 +50,7 @@
         <td><?php echo $data['tipe_kamar'] ?></td>
         <td><?php echo $data['checkin'] ?></td>
         <td><?php echo $data['checkout'] ?></td>
-        <td><?php echo $data['jumlah'] ?></td>
+        <td>Rp.<?php echo number_format($data['jumlah'],2,",",".");?></td>
         <td><?php echo $data['status'] ?></td>
            <td>
             <a href="index.php?page=reservasi-edit&id=<?php echo $data['id']; ?>">ubah</a> | 

@@ -33,7 +33,7 @@
       <tr>
         <td><?php echo $no++ ?></td>
         <td><?php echo $data['tipe_kamar'] ?></td>
-        <td><?php echo $data['harga'] ?></td>
+        <td>Rp.<?php echo number_format($data['harga'],2,",",".");?></td>
         <td><img src="../image/<?php echo $data['gambar']; ?>" width="100"/></td>
         <td><?php echo $data['status'] ?></td>
         <td>

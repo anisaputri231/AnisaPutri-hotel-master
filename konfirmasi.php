@@ -36,7 +36,7 @@ if ($checkout > $checkin) {
   	<div class="col-md-8">
   	<table class="table">
 	    <tr>
-	    	<td>NAMA PEMESAN</td>
+	    	<td>USER ID</td>
 	    	<td>:</td>
 	    	<td><?php echo $namapemesan ?></td>
 	    </tr>
